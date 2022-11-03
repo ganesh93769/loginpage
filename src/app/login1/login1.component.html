@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var attempt = 3;
+		function validate(){
+		var username = document.getElementById("user").value;
+		var password = document.getElementById("password").value;
+		if(username == "admin" && password == "admin"){
+			alert("Login Succesful");
+			window.location="admin.html"
+			return false;
+		}
+		else{
+			attempt --;
+			alert("You have left " +attempt+" attempt;");
+			if(attempt == 0){
+				document.getElementById("user").disabled = true;
+				document.getElementById("password").disabled = true;
+				document.getElementById("user").disabled = true;
+				return false;
+			}
+		}
+		}
+
+	</script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+		
+
+
+
+	
+</head>
+
+<body>
+	<p style="color: aliceblue; font-weight: bolder;
+	font-size: x-large; font-family: 'Courier New', Courier, monospace; margin-left: 55rem;">
+	{{ dateToday }}
+</p>
+	<!-- {% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+		{{ message }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	{% endfor %}
+	{% endif %} -->
+
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+
+
+					<h3 id="form-title">LOGIN</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form #lform="ngForm" (ngSubmit) ="submit(lform)" >
+						<!-- {% csrf_token %} -->
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" id="name" required
+                        [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Username">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Name is required
+                        </div></div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" id="password" required
+                        [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Name is required
+                        </div></div>
+
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<input id="submit" class="btn login_btn" type="submit" value="Login" >
+						</div>
+
+						
+					</form>
+				</div>
+				<div class="d-flex justify-content-center links">
+					Don't have an account?  <a class="button"
+					routerLink="/register"
+					routerLinkActive="activebutton"
+					ariaCurrentWhenActive="page">
+					Register
+				  </a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

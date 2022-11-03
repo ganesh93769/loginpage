@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Login } from './login';
+
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,6 @@ import { Login } from './login';
 })
 export class AppComponent {
   title = 'loginpage';
-  model = new Login('', '');
-  submitted = false;
-  onSubmit() {this.submitted = true;}
-  newLogin(){
-    this.model = new Login('', '');
-  }
+  
+ 
 }

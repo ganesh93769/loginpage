@@ -21,30 +21,39 @@
                 <div class="d-flex justify-content-center">
                     <h3 id="form-title">Register</h3>
                 </div>
-                <div class="d-flex justify-content-center form_container">
+                <div class="d-flex justify-content-center form_container" style="display: block;">
                     <form method="POST" action="">
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-2" >
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="username" placeholder="Username..." class="form-control">
-                        </div>
+                            <input type="text" class="form-control" id="name" required
+                        [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Username">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Name is required
+                        </div></div>
 
 
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
                             </div>
-                            <input type="email" name="email" placeholder="Email..." class="form-control">
-                        </div>
+                            <input type="email" class="form-control" id="email" required
+                        [(ngModel)]="model.email" name="email" #email="ngModel" placeholder="Email">
+                        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                            Email is required
+                        </div></div>
 
                         
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="number" name="phone" placeholder="Phone Number..." class="form-control">
-                        </div>
+                            <input type="number" class="form-control" id="phonenumber" required
+                        [(ngModel)]="model.phonenumber" name="phonenumber" #phonenumber="ngModel" placeholder="Phonenumber">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            number is required
+                        </div></div>
 
 
 
@@ -52,9 +61,11 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" placeholder=" Enter Password..."
-                                class="form-control">
-                        </div>
+                            <input type="password" class="form-control" id="password" required
+                        [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Password is required
+                        </div></div>
 
 
 
@@ -62,9 +73,11 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" placeholder="Re-enter Password..."
-                                class="form-control">
-                        </div>
+                            <input type="password" class="form-control" id="password1" required
+                        [(ngModel)]="model.password1" name="password1" #password1="ngModel" placeholder="Re-enter password">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Password is required
+                        </div></div>
 
 
 
@@ -77,7 +90,12 @@
 
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
-                        Already have an account? <a href="login.html" >Login</a>
+                        Already have an account?  <a class="button"
+                        routerLink="/admin"
+                        routerLinkActive="activebutton"
+                        ariaCurrentWhenActive="page">
+                        Login Page
+                      </a>
                     </div>
 
                 </div>
