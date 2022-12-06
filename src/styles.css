@@ -7,9 +7,9 @@ html {
     height: 100%;
     /* background: #7abecc !important; */
     /* background-image: url("C:/Users/Ganesh.Jejireddy/Documents/capstoneangular/loginpage/src/assets/bg1.jpg"); */
-     background-position: center;
+     /* background-position: center; */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:contain;
     
 }
 

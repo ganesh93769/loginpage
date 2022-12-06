@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import{FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -11,6 +13,13 @@ import { Login1Component } from './login1/login1.component';
 import { EventComponent } from './event/event.component';
 import { AdminComponent } from './admin/admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserComponent } from './user/user.component';
+import { BookingComponent } from './booking/booking.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +28,32 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     Login1Component,
     EventComponent,
     AdminComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserComponent,
+    BookingComponent,
+    FeedbackComponent,
+    ContactusComponent,
+    CalendarComponent,
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     RouterModule.forRoot([
       {path: 'login1', component:Login1Component},
       {path: 'register', component:RegisterComponent},
       {path: 'admin', component:AdminComponent },
       {path: 'event', component:EventComponent},
+      {path: 'user', component:UserComponent},
+      {path: 'booking', component:BookingComponent},
+      {path: 'feedback', component:FeedbackComponent},
+      {path: 'contactus', component:ContactusComponent},
+      {path: 'calendar', component:CalendarComponent},
       {path: '', redirectTo: '/login1', pathMatch: 'full'},
       {path: '**', component:PageNotFoundComponent}
       // {path: '', redirectTo: '/heros-list', pathMatch: 'full'},

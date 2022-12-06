@@ -1,12 +1,11 @@
 body{
     font: Montserrat-black;
-    background-image: url("corporate.jpg") ;
   
   }
   
   
   #title{
-    background-color:#4fcaff;
+    background-color:#0e2f44;
     color: #fff;
     /* border-bottom-left-radius: 5rem; */
   }
@@ -27,12 +26,16 @@ body{
     color:#fff;
   }
   .navbar{
-    padding-right: 2rem;
+    /* padding-right: 1rem; */
+    margin-right: 10rem;
+    /* padding-left: 4rem; */
     
   }
   .navbar-brand{
     font-family: "Ubuntu";
-    font-size: 3.5rem;
+    font-size: 2.9rem;
+    /* padding-right: 4rem; */
+    /* margin-right: 3rem; */
     
     
     
@@ -41,7 +44,7 @@ body{
   .nav-link{
     font-size: 1.2rem;
     font-family: "Montserrat-black";
-    color: white;
+    color: #fff;
     /* color: bisque; */
   }
   #navbarSupportedContent{
@@ -61,11 +64,11 @@ body{
     text-align: center;
     padding: 5%;
   }
-  /* .ia{
+  .ia{
     color: #0a668d;
     margin-bottom: 1rem;
   
-  } */
+  }
   
   #intro{
     padding: 50px 10px 10px 10px;
@@ -73,7 +76,7 @@ body{
     font:"Montserrat-black";
     font-weight: bold;
     font-size: 18px;
-    
+  
     
     
     

@@ -11,11 +11,13 @@ export class EventComponent implements OnInit {
   eid=0;
   ename=''
   edesc=''
-  edate=''
+  esdate=''
+  eedate=''
   estrt='';
-  emps=[{eventId:1001, eventName:'diwali',eventdesc:'floor1', eventdate:'20-03-2020', eventstrttime:'17:05'},
-  {eventId:1002, eventName:'pandagoww1',eventdesc:'floor2',eventdate:'21-03-2022', eventstrttime:'17:15'},
-  {eventId:1003, eventName:'pandagow2',eventdesc:'floor3', eventdate:'22-03-2022', eventstrttime:'17:25'},
+  eend=''
+  evenue=''
+  emps=[{eventId:1001, eventName:'diwali',eventdesc:'Good', eventsdate:'20-03-2020', eventedate:'20-03-2020', eventstrttime:'17:05', eventendtime:'17:05',eventvenue:'Floor1'},
+  
 ]
 
   constructor() {
@@ -25,7 +27,7 @@ export class EventComponent implements OnInit {
   ngOnInit(): void {
   }
   add(){
-    this.emps.push({eventId:this.eid,eventName:this.ename,eventdesc:this.edesc,eventdate:this.edate,eventstrttime:this.estrt,})
+    this.emps.push({eventId:this.eid,eventName:this.ename,eventdesc:this.edesc,eventsdate:this.esdate,eventstrttime:this.estrt,eventedate:this.eedate,eventendtime:this.eend,eventvenue:this.evenue})
   }
 
 }

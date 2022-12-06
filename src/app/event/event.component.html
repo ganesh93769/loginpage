@@ -1,16 +1,18 @@
 <html>
     <title> event info</title>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Ubuntu" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-        <title>Bootstrap Example</title>
-        <script src="https://kit.fontawesome.com/1c9ad4b785.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      <title>Login</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
         
-  
+    
+    
+    
+      
     </head>
         
         <body>
@@ -31,7 +33,7 @@
                           routerLink="/admin"
                           routerLinkActive="activebutton"
                           ariaCurrentWhenActive="page">
-                          Home
+                          <strong>Home</strong>
                           </a>
                         </li>
                         <li class="nav-item">
@@ -61,6 +63,11 @@
                 </div>
             
               </section>
+             
+              <div >
+                <!-- <img style="height: 40rem; width: 75rem;" src="../assets/img1.jpg" alt="Event"> -->
+              </div>
+              <br>
               <br>
             <div class="container">
             <form class="row g-3" >
@@ -79,12 +86,19 @@
                       Event Name is required
                   </div></div>
                 <div class="col-6">
-                  EventDate:
+                  Event Start Date:
                   <input type="date" class="form-control" id="eventdate" required
-                        [(ngModel)]="edate" name="eventdate" #name="ngModel" placeholder="Event Date">
+                        [(ngModel)]="esdate" name="eventdate" #name="ngModel" placeholder="Event Date">
                         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                            Event Date is required
+                            Event Start Date is required
                         </div></div>
+                        <div class="col-6">
+                          Event End Date:
+                          <input type="date" class="form-control" id="eventdate" required
+                                [(ngModel)]="eedate" name="eventdate" #name="ngModel" placeholder="Event Date">
+                                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                                    Event Start Date is required
+                                </div></div>
                 <div class="col-6">
                   EventStarttime:
                   <input type="time" class="form-control" id="eventstarttime" required
@@ -92,6 +106,20 @@
                         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Event Starttime is required
                         </div></div>
+                        <div class="col-6">
+                          EventEndtime:
+                          <input type="time" class="form-control" id="eventendtime" required
+                                [(ngModel)]="eend" name="eventstarttime" #name="ngModel" placeholder="Event starttime">
+                                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                                     EventEndtime is required
+                                </div></div>
+                                <div class="col-6">
+                                  EventVenue:
+                                  <input type="text" class="form-control" id="eventendtime" required
+                                        [(ngModel)]="evenue" name="eventstarttime" #name="ngModel" placeholder="Event Venue">
+                                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                                             EventVenue is required
+                                        </div></div>
                 <div class="col-md-12">
                   Description:
                   <input type="text" class="form-control" id="description" required
@@ -109,16 +137,22 @@
                     <tr>
                         <th>Event Id</th>
                         <th>Event Name</th>
-                        <th>Event Date</th>
+                        <th>Event StartDate</th>
+                        <th>Event EndDate</th>
                         <th>Event Starttime</th>
+                        <th>Event Endtime</th>
                         <th>Event Description</th>
+                        <th>Event Venue</th>
                     </tr>
                     <tr *ngFor="let emp of emps">
                         <td>{{emp.eventId}}</td>
                         <td>{{emp.eventName | titlecase}}</td>
-                        <td>{{emp.eventdate}}</td>
+                        <td>{{emp.eventsdate}}</td>
+                        <td>{{emp.eventedate}}</td>
                         <td>{{emp.eventstrttime}}</td>
+                        <td>{{emp.eventendtime}}</td>
                         <td>{{emp.eventdesc}}</td>
+                        <td>{{emp.eventvenue}}</td>
                     </tr>
                 </table>
             </div>
@@ -127,3 +161,6 @@
     
     
 </html>
+<div style="margin-top: 22rem;">
+<app-footer></app-footer>
+</div>
