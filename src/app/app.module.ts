@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,8 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FooterComponent } from './footer/footer.component';
+import { VieweventsComponent } from './viewevents/viewevents.component';
+import { UpdateeventsComponent } from './updateevents/updateevents.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +37,14 @@ import { FooterComponent } from './footer/footer.component';
     ContactusComponent,
     CalendarComponent,
     FooterComponent,
+    VieweventsComponent,
+    UpdateeventsComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
@@ -54,6 +59,8 @@ import { FooterComponent } from './footer/footer.component';
       {path: 'feedback', component:FeedbackComponent},
       {path: 'contactus', component:ContactusComponent},
       {path: 'calendar', component:CalendarComponent},
+      {path:'viewevents',component:VieweventsComponent},
+      {path:'updateevents',component:UpdateeventsComponent},
       {path: '', redirectTo: '/login1', pathMatch: 'full'},
       {path: '**', component:PageNotFoundComponent}
       // {path: '', redirectTo: '/heros-list', pathMatch: 'full'},
