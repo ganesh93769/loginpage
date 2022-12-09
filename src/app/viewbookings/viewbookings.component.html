@@ -37,13 +37,13 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link"
-                          routerLink="/viewbookings"
-                          routerLinkActive="activebutton"
-                          ariaCurrentWhenActive="page">
-                          <strong>Bookings</strong>
-                          </a>
-                        </li>
+                            <a class="nav-link"
+                            routerLink="/viewfeedbacks"
+                            routerLinkActive="activebutton"
+                            ariaCurrentWhenActive="page">
+                            <strong>Feedbacks</strong>
+                            </a>
+                          </li>
                         <li class="nav-item">
                           <a class="nav-link"
                           routerLink="/event"
@@ -52,14 +52,14 @@
                           <strong>Events</strong>
                           </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                           <a class="nav-link"
                           routerLink="/updateevents"
                           routerLinkActive="activebutton"
                           ariaCurrentWhenActive="page">
                           <strong>Updateevents</strong>
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                   </nav>
@@ -88,27 +88,23 @@
 <table  border="1">
     <thead></thead>
     <tr>
+     
       <th>Id</th>
+      <th>UserName</th>
       <th>Event Name</th>
-      <th>Event StartDate</th>
-      <th>Event EndDate</th>
-      <th>Event StartTime</th>
-      <th>Event EndTime</th>
-      <th>Event venue</th>
-      <th>Description</th>
+      <th>Booking Date</th>
+     
       </tr>
     
     <tbody>
-        <tr *ngFor="let cust of event">
+        <tr *ngFor="let cust of booking">
+         
           <td>{{cust.id}}</td>
-          <td>{{cust.event_name}}</td>
-            <td>{{cust.event_sdate}}</td>
-            <td>{{cust.event_edate}}</td>
-            <td>{{cust.event_stime}}</td>
-            <td>{{cust.event_etime}}</td>
-            <td>{{cust.event_venue}}</td>
-            <td>{{cust.description}}</td>
-             <td><button class="btn btn-danger" (click)="deleteEvent(cust)"> Delete Event</button></td>
+            <td>{{cust.u_name}}</td>
+            <td>{{cust.e_name}}</td>
+            <td>{{cust.b_date}}</td>
+          
+             <!-- <td><button class="btn btn-danger" (click)="deleteEvent(cust)"> Delete Event</button></td> -->
              </tr> 
     </tbody>
       </table>

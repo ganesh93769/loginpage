@@ -52,14 +52,14 @@
                           <strong>Events</strong>
                           </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                           <a class="nav-link"
                           routerLink="/updateevents"
                           routerLinkActive="activebutton"
                           ariaCurrentWhenActive="page">
                           <strong>Updateevents</strong>
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                   </nav>
@@ -88,27 +88,27 @@
 <table  border="1">
     <thead></thead>
     <tr>
-      <th>Id</th>
+     
+      <th>User Name</th>
+      <th>Email</th>
       <th>Event Name</th>
-      <th>Event StartDate</th>
-      <th>Event EndDate</th>
-      <th>Event StartTime</th>
-      <th>Event EndTime</th>
-      <th>Event venue</th>
-      <th>Description</th>
+      <th>Website Rating</th>
+      <th>Event Rating</th>
+      <th>Overall Rating</th>
+      <th>Comments</th>
       </tr>
     
     <tbody>
-        <tr *ngFor="let cust of event">
-          <td>{{cust.id}}</td>
-          <td>{{cust.event_name}}</td>
-            <td>{{cust.event_sdate}}</td>
-            <td>{{cust.event_edate}}</td>
-            <td>{{cust.event_stime}}</td>
-            <td>{{cust.event_etime}}</td>
-            <td>{{cust.event_venue}}</td>
-            <td>{{cust.description}}</td>
-             <td><button class="btn btn-danger" (click)="deleteEvent(cust)"> Delete Event</button></td>
+        <tr *ngFor="let cust of feedback">
+         
+          <td>{{cust.uname}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.eventName}}</td>
+            <td>{{cust.webReview}}</td>
+            <td>{{cust.eventReview}}</td>
+            <td>{{cust.overallReview}}</td>
+            <td>{{cust.comments}}</td>
+             <!-- <td><button class="btn btn-danger" (click)="deleteEvent(cust)"> Delete Event</button></td> -->
              </tr> 
     </tbody>
       </table>

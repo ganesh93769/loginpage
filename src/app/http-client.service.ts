@@ -110,7 +110,7 @@ export class HttpClientService {
   }
   getFeedback(){
     console.log("test call");
-    return this.httpClient.get<Feedback[]>('http://localhost:2023/apif/feedback');
+    return this.httpClient.get<Feedback[]>('http://localhost:2023/apif/feedbacks');
   }
  
   public createFeedback(feedback:Feedback){

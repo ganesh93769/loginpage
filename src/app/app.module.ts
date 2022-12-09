@@ -23,6 +23,8 @@ import { FooterComponent } from './footer/footer.component';
 import { VieweventsComponent } from './viewevents/viewevents.component';
 import { UpdateeventsComponent } from './updateevents/updateevents.component';
 import { Login2Component } from './login2/login2.component';
+import { ViewfeedbacksComponent } from './viewfeedbacks/viewfeedbacks.component';
+import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { Login2Component } from './login2/login2.component';
     VieweventsComponent,
     UpdateeventsComponent,
     Login2Component,
+    ViewfeedbacksComponent,
+    ViewbookingsComponent,
     
   ],
   imports: [
@@ -63,6 +67,8 @@ import { Login2Component } from './login2/login2.component';
       {path: 'contactus', component:ContactusComponent},
       {path: 'calendar', component:CalendarComponent},
       {path:'viewevents',component:VieweventsComponent},
+      {path:'viewfeedbacks',component:ViewfeedbacksComponent},
+      {path:'viewbookings', component:ViewbookingsComponent},
       {path:'updateevents',component:UpdateeventsComponent},
       {path: '', redirectTo: '/login1', pathMatch: 'full'},
       {path: '**', component:PageNotFoundComponent}
