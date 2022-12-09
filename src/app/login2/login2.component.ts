@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
- import{FormControl,FormGroup,FormsModule,ReactiveFormsModule} from '@angular/forms';
-
+import{FormControl,FormGroup,FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from '../users';
-import { UsersService } from '../users.service';
-
-
+import { Usersu } from '../usersu';
+import { UsersuService } from '../usersu.service';
 @Component({
-  selector: 'app-login1',
-  templateUrl: './login1.component.html',
-  styleUrls: ['./login1.component.css']
+  selector: 'app-login2',
+  templateUrl: './login2.component.html',
+  styleUrls: ['./login2.component.css']
 })
-export class Login1Component implements OnInit  {
-  constructor(private router: Router, private usersservice: UsersService) {}
+export class Login2Component implements OnInit {
+  constructor(private router: Router, private usersservice: UsersuService) {}
 
-  Users: Users = new Users();
+  Usersu: Usersu = new Usersu();
   // signupbutton: boolean | false;
   errormsg = '';
   errorshow: boolean | false | undefined;
@@ -47,7 +43,7 @@ export class Login1Component implements OnInit  {
 
             if (data[0] == true) {
               if (data[1] == true) {
-                this.router.navigate(['admin']);
+                this.router.navigate(['user']);
               } else {
                 alert('You entered an invalid Username or Password');
               }
@@ -70,5 +66,6 @@ export class Login1Component implements OnInit  {
     this.router.navigate(['signup']);
   }
 }
+
 
 

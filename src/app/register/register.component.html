@@ -19,70 +19,189 @@
         <div class="d-flex justify-content-center h-100">
             <div class="user_card">
                 <div class="d-flex justify-content-center">
-                    <h3 id="form-title">Register</h3>
+                    <h3 id="form-title">REGISTER</h3>
                 </div>
                 <div class="d-flex justify-content-center form_container" style="display: block;">
-                    <form method="POST" action="">
+                    <form [formGroup]="form" (ngSubmit)="createnewuser()">
+                        <div formGroupName="details">
                         <div class="input-group mb-2" >
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="name" required
-                        [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Username">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            <input
+                                formControlName="email"
+                                placeholder="Email"
+                                type="email"
+                                class="form-control"
+                                id="EmailId"
+                                name="EmailId"
+                                [(ngModel)]="newuser.emailId"
+                                required
+                                />                        
+                                <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Name is required
-                        </div></div>
+                        </div> -->
+                    </div>
 
 
                         <div class="input-group mb-2">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="email" class="form-control" id="email" required
-                        [(ngModel)]="model.email" name="email" #email="ngModel" placeholder="Email">
-                        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                            <input
+                                formControlName="fname"
+                                placeholder="Firstname"
+                                type="text"
+                                minlength="8"
+                                maxlength="15"
+                                class="form-control"
+                                id="FirstName"
+                                name="FirstName"
+                                [(ngModel)]="newuser.firstName"
+                                required
+                                />                      
+                                  <!-- <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
                             Email is required
-                        </div></div>
+                        </div> -->
+                    </div>
 
                         
                         <div class="input-group mb-2">
                             <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input
+                            formControlName="lname"
+                            placeholder="Lastname"
+                            type="text"
+                            minlength="8"
+                            maxlength="15"
+                            class="form-control"
+                            id="LastName"
+                            name="LastName"
+                            [(ngModel)]="newuser.lastName"
+                            required
+                          />                   
+                               <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            number is required
+                        </div> -->
+                    </div>
+
+
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
+                            </div>
+                            <select
+                            formControlName="gender"
+                            [(ngModel)]="newuser.gender"
+                            class="form-select"
+                            aria-label="Default select example"
+                            aria-placeholder="Gender"
+                            class="form-control"
+                            id="Gender"
+                            name="gender"
+                          >
+                            <option value="" disabled selected>Gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="O">Others</option>
+                          </select>                     
+                             <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            Password is required
+                        </div> -->
+                    </div>
+
+
+
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="number" class="form-control" id="phonenumber" required
-                        [(ngModel)]="model.phonenumber" name="phonenumber" #phonenumber="ngModel" placeholder="Phonenumber">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                            number is required
-                        </div></div>
-
-
-
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" id="password" required
-                        [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Password">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            <input
+                                formControlName="phn"
+                                type="tel"
+                                placeholder="Number"
+                                pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
+                                maxlength="10"
+                                class="form-control"
+                                id="mob"
+                                name="mob"
+                                [(ngModel)]="newuser.mobileNumber"
+                                required
+                                />                    
+                                    <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Password is required
-                        </div></div>
+                        </div> -->
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input
+                        formControlName="pwd"
+                        placeholder="Password"
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="Password"
+                        minlength="8"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$"
+                        required
+                        [(ngModel)]="newuser.password"
+                        required
+                      />                
+                                <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        Password is required
+                    </div> -->
+                </div>
+                <div class="input-group mb-2">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input
+                    formControlName="pwd"
+                    placeholder="confirm password"
+                    type="password"
+                    class="form-control"
+                    id="confirm_password"
+                    name="confirm_Password"
+                    minlength="8"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$"
+                    required
+                    [(ngModel)]="passtemp"
+                    required
+                  />                  
+                            <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Password is required
+                </div> -->
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <input
+                formControlName="pin"
+                placeholder="PIN"
+                type="pin"
+                class="form-control"
+                id="Pin"
+                name="Pin"
+                minlength="8"
+                pattern="[A-Za-z]{3}"
+                [(ngModel)]="newuser.pin"
+                required
+              />                 
+                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                Password is required
+            </div> -->
+        </div>
 
 
-
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" id="password1" required
-                        [(ngModel)]="model.password1" name="password1" #password1="ngModel" placeholder="Re-enter password">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                            Password is required
-                        </div></div>
-
-
-
+                        </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <input class="btn login_btn" type="submit" value="Register">
+                            <button class="btn login_btn" type="submit">Sign Up</button>
                         </div>
                     </form>
 
@@ -91,7 +210,7 @@
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
                         Already have an account?  <a class="button"
-                        routerLink="/admin"
+                        routerLink="/login2"
                         routerLinkActive="activebutton"
                         ariaCurrentWhenActive="page">
                         Login Page

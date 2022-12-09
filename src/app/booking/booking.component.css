@@ -15,7 +15,7 @@ body{
   }
   h1{
     font:"Montserrat-black";
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     line-height: 1.5;
     font-weight: 400;
   }
@@ -31,7 +31,7 @@ body{
   }
   .navbar-brand{
     font-family: "Ubuntu";
-    font-size: 2.9rem;
+    font-size: 3rem;
     
     
     
@@ -79,4 +79,6 @@ body{
     
     
   }
-  
+  th,td{
+    padding: 10px;
+}

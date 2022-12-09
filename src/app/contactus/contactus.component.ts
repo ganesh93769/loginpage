@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact, HttpClientService } from '../http-client.service';
 
 @Component({
   selector: 'app-contactus',
@@ -6,22 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-  uname='';
-  email='';
-  msg='';
-  
-emps=[{ userName:'Ganesh',Email:'ganesh@gmail.com',Message:'How to view calender'},
-]
-
-
-
-  constructor() { }
+  contact: Contact = new Contact(0,"","","");
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
 
   ngOnInit(): void {
   }
-  add(){
-    this.emps.push({userName:this.uname,Email:this.email,Message:this.msg})
-  }
-  
+  createContact():void{
+    this.httpClientService.createContact(this.contact).subscribe(data =>{
+      alert(" Submitted ")
+    });
+  };
 
 }

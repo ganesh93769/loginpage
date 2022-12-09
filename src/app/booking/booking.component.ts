@@ -1,25 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import{NgForm, NgModel} from '@angular/forms';
+import { HttpClientService, Event, Booking } from '../http-client.service';
+
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class BookingComponent implements OnInit {
-  uname='';
-  ename='';
-  edate='';
- 
-  emps=[{ userName:'Ganesh',eventName:'diwali', eventdate:'20-03-2020'},
- 
-]
+export class BookingComponent implements OnInit  {
+  event:Event[]=[];
+  booking: Booking = new Booking(0,"","","");
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
 
-  constructor() { }
+  ngOnInit() {
+    this.httpClientService.getEvent().subscribe(
+     response =>{this.event=response;},
+    );
 
-  ngOnInit(): void {
-  }
-  add(){
-    this.emps.push({userName:this.uname,eventName:this.ename,eventdate:this.edate})
-  }
+}
+  createBooking():void{
+    if(this.booking.e_name != "diwali")
+    {
+      alert("wrong event")
+    }
+    else{
+    this.httpClientService.createBooking(this.booking).subscribe(data =>{
+      alert("Booking added")
+    });
+  };
+}
 
 }

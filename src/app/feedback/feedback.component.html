@@ -86,41 +86,91 @@
             <div class="container">
             <form class="row g-3" >
                 <div class="col-md-6">
-                  User Name
-                  <input type="text" class="form-control" id="uname" required
-                        [(ngModel)]="uname" name="uname" #name="ngModel" placeholder="User Name">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                 
+                  <label for="username">User Name</label>
+                  <input [(ngModel)]="feedback.uname" placeholder="User Name" name="username" class="form-control" id="username">
+                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             User Name is required
-                        </div></div>
+                        </div> -->
+                      </div>
                         <div class="col-md-6">
-                          Email
-                          <input type="email" class="form-control" id="email" required
-                                [(ngModel)]="email" name="email" #name="ngModel" placeholder="User email">
-                                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                          <label for="id">Email</label>
+                          <input [(ngModel)]="feedback.email" placeholder="email" type="email" name="id" class="form-control" id="id">
+                                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                                     User email is required
-                                </div></div>
+                                </div> -->
+                              </div>
                 <div class="col-md-6">
-                  Event Name:
-                  <input type="text" class="form-control" id="eventname" required
-                  [(ngModel)]="ename" name="eventname" #name="ngModel" placeholder="Event Name">
-                  <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="id">Event Name</label>
+                  <input [(ngModel)]="feedback.eventName" placeholder="Event Name" type="text" name="id" class="form-control" id="id">
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                       Event Name is required
-                  </div></div>
+                  </div> -->
+                </div>
+                <h4>Rate your experience:</h4>
+                <div class="container">
+                  <table>
+                    <tr>
+                    <tr>
+                      <td>Excellent -5</td>
+                    </tr>
+                      <tr>
+                      <td>Good -4</td>
+                      </tr>
+                      <tr>
+                      <td>Average -3</td>
+                    </tr>
+                    <tr>
+                      <td>Need Improvement -2</td>
+                    </tr>
+                      <td>Poor -1</td>
+                    
+                    
+                    <!-- <tr>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr> -->
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <label for="id">Rate your experience with the website</label>
+                  <input [(ngModel)]="feedback.webReview" type="number" name="id" class="form-control" id="id">
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                      Event Name is required
+                  </div> -->
+                </div>
+                <div class="col-md-6">
+                  <label for="id">Rate your Experience with the Events</label>
+                  <input [(ngModel)]="feedback.eventReview" type="number" name="id" class="form-control" id="id">
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                      Event Name is required
+                  </div> -->
+                </div>
+                <div class="col-md-6">
+                  <label for="id">Rate your overall Experience</label>
+                  <input [(ngModel)]="feedback.overallReview"  type="number" name="id" class="form-control" id="id">
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                      Event Name is required
+                  </div> -->
+                </div>
                 <div class="col-6">
-                  Comments:
-                  <textarea type="text" class="form-control" id="eventdate" required
-                        [(ngModel)]="edate" name="eventdate" #name="ngModel" placeholder="Write Comments here"> </textarea>
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                 
+                  <label for="id">Comments</label>
+                  <textarea type="text" class="form-control" id="msg" required [(ngModel)]="feedback.comments" placeholder="Type your comments here"  name="id" class="form-control" id="id"></textarea>
+                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Comments are required
-                        </div></div>
+                        </div> -->
+                      </div>
                
                 
-                <div class="col-12">
-                    <button style="margin-right: -0.27rem;"  class="btn btn-primary" (click)="add()">+</button>
-                  <button  class="btn btn-primary" (click) ="add()">Add Feedback</button>
-                </div>
+                      <div class="col-12">
+                        <button class="btn btn-success" (click)="createFeedback()">Submit</button>             
+                         </div>
               </form>
-              <div class="container">
+              <!-- <div class="container">
                 <table class="table table-hover">
                     <tr>
                         <th>User Name</th>
@@ -137,12 +187,12 @@
                        
                     </tr>
                 </table>
-            </div>
+            </div> -->
             </div>
         </body>
     
     
 </html>
-<div style="margin-top: 10rem;">
+<div style="margin-top: 20rem;">
   <app-footer></app-footer>
   </div>

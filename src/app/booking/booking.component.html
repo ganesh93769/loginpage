@@ -83,37 +83,62 @@
             
               </section>
               <br>
+              <div class="container">             
+                <table  border="1">
+                    <thead></thead>
+                    <tr>
+                     
+                      <th>Event Name</th>
+                      <th>Event StartDate</th>
+                      <th>Event EndDate</th>
+                     
+                      <th>Event venue</th>
+                      <th>Description</th>
+                      </tr>
+                    
+                    <tbody>
+                        <tr *ngFor="let cust of event">
+                        
+                          <td>{{cust.event_name}}</td>
+                            <td>{{cust.event_sdate}}</td>
+                            <td>{{cust.event_edate}}</td>
+                            <td>{{cust.event_venue}}</td>
+                            <td>{{cust.description}}</td>
+                            
+                             </tr> 
+                    </tbody>
+                      </table>
+                    </div>
+                    <br>
             <div class="container">
             <form class="row g-3" >
                 <div class="col-md-6">
-                  User Name
-                  <input type="text" class="form-control" id="uname" required
-                        [(ngModel)]="uname" name="uname" #name="ngModel" placeholder="User Name">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="id">User Name</label>
+                  <input [(ngModel)]="booking.u_name" placeholder="User Name" name="id" class="form-control" id="id">
+                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             User Name is required
-                        </div></div>
+                        </div> -->
+                      </div>
                 <div class="col-md-6">
-                  Event Name:
-                  <input type="text" class="form-control" id="eventname" required
-                  [(ngModel)]="ename" name="eventname" #name="ngModel" placeholder="Event Name">
-                  <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="id">Event Name</label>
+                  <input [(ngModel)]="booking.e_name" placeholder="Event Name" name="eventname" class="form-control" id="eventname">                  
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                       Event Name is required
-                  </div></div>
+                  </div> -->
+                </div>
                 <div class="col-6">
-                  EventDate:
-                  <input type="date" class="form-control" id="eventdate" required
-                        [(ngModel)]="edate" name="eventdate" #name="ngModel" placeholder="Event Date">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="id">Booking Date</label>
+                  <input [(ngModel)]="booking.b_date" type="date" name="id" class="form-control" id="id">                        
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Event Date is required
-                        </div></div>
+                        </div> -->
+                      </div>
                
                 
-                <div class="col-12">
-                    <button style="margin-right: -0.27rem;"  class="btn btn-primary" (click)="add()">+</button>
-                  <button  class="btn btn-primary" (click) ="add()">Add Booking</button>
-                </div>
+                        <div class="col-12">
+                          <button class="btn btn-success" (click)="createBooking()">AddBooking</button>                </div>
               </form>
-              <div class="container">
+              <!-- <div class="container">
                 <table class="table table-hover">
                     <tr>
                         <th>User Name</th>
@@ -128,7 +153,7 @@
                        
                     </tr>
                 </table>
-            </div>
+            </div> -->
             </div>
         </body>
     

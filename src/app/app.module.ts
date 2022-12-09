@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import{FormsModule} from '@angular/forms';
+import{FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -22,6 +22,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FooterComponent } from './footer/footer.component';
 import { VieweventsComponent } from './viewevents/viewevents.component';
 import { UpdateeventsComponent } from './updateevents/updateevents.component';
+import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UpdateeventsComponent } from './updateevents/updateevents.component';
     FooterComponent,
     VieweventsComponent,
     UpdateeventsComponent,
+    Login2Component,
     
   ],
   imports: [
@@ -51,6 +53,7 @@ import { UpdateeventsComponent } from './updateevents/updateevents.component';
     }),
     RouterModule.forRoot([
       {path: 'login1', component:Login1Component},
+      {path: 'login2', component:Login2Component},
       {path: 'register', component:RegisterComponent},
       {path: 'admin', component:AdminComponent },
       {path: 'event', component:EventComponent},
@@ -68,6 +71,7 @@ import { UpdateeventsComponent } from './updateevents/updateevents.component';
 
     ]),
     FormsModule,
+    ReactiveFormsModule
     
     
 

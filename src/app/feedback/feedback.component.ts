@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Feedback, HttpClientService } from '../http-client.service';
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
-  uname='';
-ename='';
-edate='';
-email='';
+export class FeedbackComponent implements OnInit  {
+  feedback: Feedback = new Feedback(0,"","","",0,0,0,"");
+  constructor(
+    private httpClientService: HttpClientService
+  ) { }
 
-emps=[{ userName:'Ganesh',eventName:'diwali', eventdate:'Good',Email:'ganesh@gmail.com'},
-
-]
-
-constructor() { }
-
-ngOnInit(): void {
-}
-add(){
-  this.emps.push({userName:this.uname,eventName:this.ename,eventdate:this.edate,Email:this.email})
-}
+  ngOnInit(): void {
+  }
+  createFeedback():void{
+    this.httpClientService.createFeedback(this.feedback).subscribe(data =>{
+      alert(" Submitted ")
+    });
+  };
 
 }

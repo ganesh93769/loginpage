@@ -86,35 +86,34 @@
             <div class="container">
             <form class="row g-3" >
                 <div class="col-md-6">
-                  User Name
-                  <input type="text" class="form-control" id="uname" required
-                        [(ngModel)]="uname" name="uname" #name="ngModel" placeholder="User Name">
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="username">User Name</label>
+                  <input [(ngModel)]="contact.uname" placeholder="User Name" name="username" class="form-control" id="username">
+                  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             User Name is required
-                        </div></div>
+                        </div> -->
+                      </div>
                         <div class="col-md-6">
-                          Email
-                          <input type="email" class="form-control" id="email" required
-                                [(ngModel)]="email" name="email" #name="ngModel" placeholder="User email">
-                                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                          <label for="id">Email</label>
+                  <input [(ngModel)]="contact.email" placeholder="email" type="email" name="id" class="form-control" id="id">
+                                <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                                     User email is required
-                                </div></div>
+                                </div> -->
+                              </div>
                
                 <div class="col-6">
-                  Message:
-                  <textarea type="text" class="form-control" id="msg" required
-                        [(ngModel)]="msg" name="msg" #name="ngModel" placeholder="Write Message here"> </textarea>
-                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <label for="id">Message</label>
+                  <textarea type="text" class="form-control" id="msg" required [(ngModel)]="contact.message" placeholder="Type ur message here"  name="id" class="form-control" id="id"></textarea>
+                        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                             Message are required
-                        </div></div>
-               
+                        </div> -->
+                      </div>
+                      
                 
-                <div class="col-12">
-                    <button style="margin-right: -0.27rem;"  class="btn btn-primary" (click)="add()">+</button>
-                  <button  class="btn btn-primary" (click) ="add()">Submit</button>
-                </div>
+                      <div class="col-12">
+                        <button class="btn btn-success" (click)="createContact()">Submit</button>             
+                         </div>
               </form>
-              <div class="container">
+               <!-- <div class="container">
                 <table class="table table-hover">
                     <tr>
                         <th>User Name</th>
@@ -130,7 +129,7 @@
                        
                     </tr>
                 </table>
-            </div>
+            </div>  -->
             </div>
         </body>
     
@@ -138,4 +137,4 @@
 </html>
 <div style="margin-top: 10rem;">
   <app-footer></app-footer>
-  </div>
+  </div> 
