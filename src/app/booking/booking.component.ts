@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{NgForm, NgModel} from '@angular/forms';
+import{FormControl, FormGroup, NgForm, NgModel} from '@angular/forms';
 import { HttpClientService, Event, Booking } from '../http-client.service';
 
 
@@ -11,6 +11,7 @@ import { HttpClientService, Event, Booking } from '../http-client.service';
 export class BookingComponent implements OnInit  {
   event:Event[]=[];
   booking: Booking = new Booking(0,"","","");
+ 
   constructor(
     private httpClientService: HttpClientService
   ) { }
@@ -22,15 +23,15 @@ export class BookingComponent implements OnInit  {
 
 }
   createBooking():void{
-    if(this.booking.e_name != "diwali")
+    if((this.booking.e_name != "diwali") && (this.booking.e_name !="dushera") )
     {
-      alert("wrong event")
-    }
-    else{
+      alert("Please select events from above table")
+    }else{
+    
     this.httpClientService.createBooking(this.booking).subscribe(data =>{
       alert("Booking added")
     });
+  }
   };
 }
 
-}
