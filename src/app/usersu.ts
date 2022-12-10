@@ -2,6 +2,7 @@ import { EmailValidator } from '@angular/forms';
 
 export class Usersu {
   emailId!: EmailValidator;
+  email!: String;
 
   firstName!: String;
 

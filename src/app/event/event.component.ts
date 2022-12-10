@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
  import{NgForm} from '@angular/forms';
+import Swal from 'sweetalert2';
  import { HttpClientService, Event } from '../http-client.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class EventComponent implements OnInit {
   }
   createEvent():void{
     this.httpClientService.createEvent(this.event).subscribe(data =>{
-      alert("Event added")
+      Swal.fire("Thank you",'Event added succesfully','success')
     });
   };
 

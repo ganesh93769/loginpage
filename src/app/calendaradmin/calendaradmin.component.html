@@ -1,0 +1,94 @@
+<html>
+    <title> event info</title>
+    <head>
+      <title>Login</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        
+    
+    
+    
+      
+    </head>
+        
+        <body>
+            <section id="title">
+                <div class="container-fluid">
+            
+            
+                  <!-- Nav Bar -->
+                  <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" style="font-size: 2.9rem;">The Confetti</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                          <a class="nav-link"
+                          routerLink="/admin"
+                          routerLinkActive="activebutton"
+                          ariaCurrentWhenActive="page">
+                          <strong>Home</strong>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                            routerLink="/viewfeedbacks"
+                            routerLinkActive="activebutton"
+                            ariaCurrentWhenActive="page">
+                            <strong>Feedbacks</strong>
+                            </a>
+                          </li>
+                        <li class="nav-item">
+                          <a class="nav-link"
+                          routerLink="/event"
+                          routerLinkActive="activebutton"
+                          ariaCurrentWhenActive="page">
+                          <strong>Events</strong>
+                          </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                          <a class="nav-link"
+                          routerLink="/updateevents"
+                          routerLinkActive="activebutton"
+                          ariaCurrentWhenActive="page">
+                          <strong>Updateevents</strong>
+                          </a>
+                        </li> -->
+                      </ul>
+                    </div>
+                  </nav>
+            
+            
+            
+                  <!-- Title -->
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <h1>Let's get the party started.</h1>
+                      <!-- <i class="fas fa-check-circle fa-4x ia"></i> -->
+                       <i class="fas fa-bullhorn fa-3x ic "></i>
+                      
+            
+                    </div>
+                   
+            
+                  </div>
+                </div>
+            
+              </section>
+              <div class="control-section">
+                <ejs-schedule #scheduleObj width='100%' height='550px' [eventSettings]="eventSettings" [selectedDate]="selectedDate"
+                  (navigating)="onNavigating($event)" (actionComplete)="onActionComplete($event)">
+                </ejs-schedule>
+              </div>
+              
+              
+              
+        </body>
+</html>
+

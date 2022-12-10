@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Feedback, HttpClientService } from '../http-client.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class FeedbackComponent implements OnInit  {
   }
   createFeedback():void{
     this.httpClientService.createFeedback(this.feedback).subscribe(data =>{
-      alert(" Submitted ")
+      Swal.fire("Thank you",'Feedback Submitted succesfully','success')
     });
   };
 

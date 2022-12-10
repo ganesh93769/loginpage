@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
  import{FormControl,FormGroup,FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Users } from '../users';
 import { UsersService } from '../users.service';
 
@@ -49,7 +50,8 @@ export class Login1Component implements OnInit  {
               if (data[1] == true) {
                 this.router.navigate(['admin']);
               } else {
-                alert('You entered an invalid Username or Password');
+                // alert('You entered an invalid Username or Password');
+                Swal.fire("Invalid username or Password")
               }
             } else {
               this.errormsg = 'If you are new user please signup';

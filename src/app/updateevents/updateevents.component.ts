@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { HttpClientService,Event } from '../http-client.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class UpdateeventsComponent implements OnInit  {
   }
   updateEvent():void{
     this.httpClientService.updateEvent(this.event).subscribe(data =>{
-      alert("Event updated")
+      Swal.fire("Thank you",'Event updated succesfully','success')
     });
   };
 

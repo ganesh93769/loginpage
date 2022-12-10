@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Users } from '../users';
 import { UsersuService } from '../usersu.service';
 import { Usersu } from '../usersu';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +40,7 @@ export class RegisterComponent implements OnInit {
           this.userservice.createNewUser(this.newuser).subscribe(
             (data) => {
               console.log(data);
-              alert('Successfully registered');
+              Swal.fire("Thank you",'Succesfully Registered','success')
               this.router.navigate(['login2']);
             },
             

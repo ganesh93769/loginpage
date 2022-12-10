@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Contact, HttpClientService } from '../http-client.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ContactusComponent implements OnInit {
   }
   createContact():void{
     this.httpClientService.createContact(this.contact).subscribe(data =>{
-      alert(" Submitted ")
+      Swal.fire("Thank you",'Message submitted succesfully','success')
     });
   };
 

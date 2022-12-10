@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormControl,FormGroup,FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Usersu } from '../usersu';
 import { UsersuService } from '../usersu.service';
 @Component({
@@ -45,7 +46,7 @@ export class Login2Component implements OnInit {
               if (data[1] == true) {
                 this.router.navigate(['user']);
               } else {
-                alert('You entered an invalid Username or Password');
+                Swal.fire("You entered an invalid Username or Password");
               }
             } else {
               this.errormsg = 'If you are new user please signup';

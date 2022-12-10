@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{FormControl, FormGroup, NgForm, NgModel} from '@angular/forms';
+import Swal from 'sweetalert2';
 import { HttpClientService, Event, Booking } from '../http-client.service';
 
 
@@ -29,7 +30,7 @@ export class BookingComponent implements OnInit  {
     }else{
     
     this.httpClientService.createBooking(this.booking).subscribe(data =>{
-      alert("Booking added")
+      Swal.fire("Thank you",'Booking added succesfully','success')
     });
   }
   };

@@ -5,7 +5,7 @@ import{FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-
+import { ScheduleModule, RecurrenceEditorModule,DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,6 +25,8 @@ import { UpdateeventsComponent } from './updateevents/updateevents.component';
 import { Login2Component } from './login2/login2.component';
 import { ViewfeedbacksComponent } from './viewfeedbacks/viewfeedbacks.component';
 import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { CalendaradminComponent } from './calendaradmin/calendaradmin.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +47,15 @@ import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
     Login2Component,
     ViewfeedbacksComponent,
     ViewbookingsComponent,
+    UpdatepasswordComponent,
+    CalendaradminComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ScheduleModule,RecurrenceEditorModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
@@ -66,10 +71,12 @@ import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
       {path: 'feedback', component:FeedbackComponent},
       {path: 'contactus', component:ContactusComponent},
       {path: 'calendar', component:CalendarComponent},
+      {path:'calendaradmin',component:CalendaradminComponent},
       {path:'viewevents',component:VieweventsComponent},
       {path:'viewfeedbacks',component:ViewfeedbacksComponent},
       {path:'viewbookings', component:ViewbookingsComponent},
       {path:'updateevents',component:UpdateeventsComponent},
+      {path:'updatepassword',component:UpdatepasswordComponent},
       {path: '', redirectTo: '/login1', pathMatch: 'full'},
       {path: '**', component:PageNotFoundComponent}
       // {path: '', redirectTo: '/heros-list', pathMatch: 'full'},
@@ -82,7 +89,7 @@ import { ViewbookingsComponent } from './viewbookings/viewbookings.component';
     
 
   ],
-  providers: [],
+  providers: [DayService,WeekService,WorkWeekService,MonthService,MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
