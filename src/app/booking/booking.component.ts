@@ -24,15 +24,15 @@ export class BookingComponent implements OnInit  {
 
 }
   createBooking():void{
-    if((this.booking.e_name != "diwali") && (this.booking.e_name !="dushera") )
-    {
-      alert("Please select events from above table")
-    }else{
+    // if((this.booking.e_name != "diwali") && (this.booking.e_name !="dushera") )
+    // {
+    //   alert("Please select events from above table")
+    // }else
     
     this.httpClientService.createBooking(this.booking).subscribe(data =>{
       Swal.fire("Thank you",'Booking added succesfully','success')
     });
-  }
+  
   };
 }
 
